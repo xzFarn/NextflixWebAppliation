@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 export const Navigation: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -16,12 +17,12 @@ export const Navigation: React.FC = () => {
               <img src="vector.svg" alt="Netflix" className="h-8" />
             </div>
             <div className="hidden md:flex items-center space-x-3 lg:space-x-6">
-              <a href="/" className="text-white hover:text-gray-300 transition-colors text-sm lg:text-base">Home</a>
-              <a href="/" className="text-white hover:text-gray-300 transition-colors text-sm lg:text-base">TV Shows</a>
-              <a href="/" className="text-white hover:text-gray-300 transition-colors text-sm lg:text-base">Movies</a>
-              <a href="/" className="text-white hover:text-gray-300 transition-colors text-sm lg:text-base">New & Popular</a>
-              <a href="/" className="text-white hover:text-gray-300 transition-colors text-sm lg:text-base">My List</a>
-              <a href="/" className="text-white hover:text-gray-300 transition-colors text-sm lg:text-base">Browse by Languages</a>
+              <Link href="/" className="text-white hover:text-gray-300 transition-colors text-sm lg:text-base">Home</Link>
+              <Link href="/" className="text-white hover:text-gray-300 transition-colors text-sm lg:text-base">TV Shows</Link>
+              <Link href="/" className="text-white hover:text-gray-300 transition-colors text-sm lg:text-base">Movies</Link>
+              <Link href="/" className="text-white hover:text-gray-300 transition-colors text-sm lg:text-base">New & Popular</Link>
+              <Link href="/" className="text-white hover:text-gray-300 transition-colors text-sm lg:text-base">My List</Link>
+              <Link href="/" className="text-white hover:text-gray-300 transition-colors text-sm lg:text-base">Browse by Languages</Link>
             </div>
           </div>
           <div className="flex items-center space-x-1 sm:space-x-2 md:space-x-4">
@@ -86,12 +87,12 @@ export const Navigation: React.FC = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden bg-black/95 border-t border-gray-800">
             <div className="px-2 py-2 space-y-2">
-              <a href="/" className="block text-white hover:text-gray-300 transition-colors py-2">Home</a>
-              <a href="/" className="block text-white hover:text-gray-300 transition-colors py-2">TV Shows</a>
-              <a href="/" className="block text-white hover:text-gray-300 transition-colors py-2">Movies</a>
-              <a href="/" className="block text-white hover:text-gray-300 transition-colors py-2">New & Popular</a>
-              <a href="/" className="block text-white hover:text-gray-300 transition-colors py-2">My List</a>
-              <a href="/" className="block text-white hover:text-gray-300 transition-colors py-2">Browse by Languages</a>
+              <Link href="/" className="block text-white hover:text-gray-300 transition-colors py-2">Home</Link>
+              <Link href="/" className="block text-white hover:text-gray-300 transition-colors py-2">TV Shows</Link>
+              <Link href="/" className="block text-white hover:text-gray-300 transition-colors py-2">Movies</Link>
+              <Link href="/" className="block text-white hover:text-gray-300 transition-colors py-2">New & Popular</Link>
+              <Link href="/" className="block text-white hover:text-gray-300 transition-colors py-2">My List</Link>
+              <Link href="/" className="block text-white hover:text-gray-300 transition-colors py-2">Browse by Languages</Link>
             </div>
           </div>
         )}

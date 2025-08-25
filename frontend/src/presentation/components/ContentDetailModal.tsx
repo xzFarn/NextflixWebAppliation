@@ -2,10 +2,26 @@
 
 import { useState, useRef, useEffect } from 'react';
 
+interface MovieContent {
+  id: number;
+  title: string;
+  original_title?: string;
+  backdrop_path?: string;
+  trailer?: {
+    key: string;
+  };
+  overview?: string;
+  release_date?: string;
+  vote_average?: number;
+  runtime?: number;
+  genres?: Array<{ id: number; name: string }>;
+  production_companies?: Array<{ id: number; name: string }>;
+}
+
 interface ContentDetailModalProps {
   isOpen: boolean;
   onClose: () => void;
-  content: any; // Will be typed properly when we have the API response structure
+  content: MovieContent | null;
   isLoading?: boolean;
 }
 
@@ -175,13 +191,13 @@ export const ContentDetailModal: React.FC<ContentDetailModalProps> = ({
 
           {content.production_companies && content.production_companies.length > 0 && (
             <div className="text-gray-300 text-sm mb-2">
-              <span className="text-gray-400">Production:</span>  {content.production_companies.slice(0, 3).map((company: any) => company.name).join(', ')}
+              <span className="text-gray-400">Production:</span>  {content.production_companies.slice(0, 3).map((company: { name: string }) => company.name).join(', ')}
             </div>
           )}
 
           {content.genres && content.genres.length > 0 && (
             <div className="text-gray-300 text-sm">
-              <span className="text-gray-400">Genres:</span> {content.genres.map((genre: any) => genre.name).join(', ')}
+              <span className="text-gray-400">Genres:</span> {content.genres.map((genre: { name: string }) => genre.name).join(', ')}
             </div>
           )}
         </div>

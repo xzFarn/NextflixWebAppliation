@@ -96,12 +96,12 @@ export const ContentSection: React.FC<ContentSectionProps> = ({ title, items, on
         <div className="flex space-x-2 sm:space-x-4 overflow-x-auto pb-4 scrollbar-hide">
           {displayItems.map((item, index) => (
             <ContentCard
-              key={(title === "Popular on Netflix" || title === "Upcoming Movies") ? (item as any).id : index}
+              key={(title === "Popular on Netflix" || title === "Upcoming Movies") ? (item as { id: number }).id : index}
               title={item.title}
-              badge={(item as any).badge}
-              progress={(item as any).progress}
-              imageUrl={(item as any).imageUrl}
-              movieId={(item as any).id}
+              badge={(item as { badge?: string }).badge}
+              progress={(item as { progress?: number }).progress}
+              imageUrl={(item as { imageUrl: string }).imageUrl}
+              movieId={(item as { id: number }).id}
               onClick={onMovieClick}
             />
           ))}
