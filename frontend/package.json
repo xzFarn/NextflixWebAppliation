@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "next dev --turbopack",
-    "start:dev": "nodemon --exec 'next dev'",
+    "start": "next dev --turbopack -H 0.0.0.0",
+    "start:dev": "nodemon --exec 'next dev -H 0.0.0.0'",
     "build": "next build --turbopack",
     "lint": "eslint"
   },
